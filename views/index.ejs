@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= tittle %></title>
+</head>
+<body>
+    <h3>Articles</h3>  
+        <% if(user){ %>
+            <%-include ('partials/loggedInHeader') %>
+            
+        <a href="/console">console</a>
+        
+    <% }else{ %>
+        <%-include ('partials/auth') %>
+    <% } %>
+
+ 
+    
+    <% data.forEach(e => { %> 
+        <ol>
+            <li><%= e.title %></li>
+            <li><%= e.auther.name %></li>
+
+            <li><%= e.description %></li>
+            <!-- <button>Edit</button> -->
+        </ol>
+        
+    <% }) %>
+
+</body>
+
+</html>

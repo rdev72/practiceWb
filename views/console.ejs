@@ -1,0 +1,22 @@
+<%-include ('partials/loggedInHeader') %>
+<a href="/">Main</a>
+
+<form action="/article/add" method="POST">
+<label>Tittle</label>
+<input type="text" name='tittle' required><br>
+<label>description</label>
+<input type="text" name='description'><br>
+<input type="submit" value="ADD">
+</form>
+<hr>
+<% userArticle.forEach(e => { %> 
+    
+       <h4><%= e.title %></h4>
+        <!-- <%= e.auther.name %> -->
+        <p><%= e.description %></p>
+        <a href="article/edit/<%= e._id %>"><button>Edit</button></a>
+        <a href="article/delete/<%= e._id %>"><button>Delete</button></a>
+                 
+    
+    
+<% }) %>
